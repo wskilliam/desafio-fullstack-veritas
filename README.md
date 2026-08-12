@@ -10,7 +10,7 @@ Aplicação Fullstack simples de gerenciamento de tarefas em formato Kanban, des
 
 ---
 
-## 📐 Documentação de Arquitetura
+## Documentação de Arquitetura
 
 Os diagramas de arquitetura e fluxo da aplicação estão salvos na pasta `/docs`:
 
@@ -20,13 +20,14 @@ Os diagramas de arquitetura e fluxo da aplicação estão salvos na pasta `/docs
 ## Como Executar o Projeto
 
 ### Pré-requisitos
-- [Go](https://golang.org/) instalado (v1.18+).
+- [Go](https://golang.org/) instalado (v1.26.5).
 - [Node.js](https://nodejs.org/) e npm instalados.
 
 ### 1. Executando o Backend
 ```bash
 cd backend
 go run .
+```
 
 ### 2. Executando o Frontend
 ```bash
