@@ -91,7 +91,6 @@ export const TaskCard = ({ task, onUpdateTask, onUpdateStatus, onDelete }) => {
     );
   }
 
-  // Estilo base para manter todos os botões uniformes e responsivos em uma linha
   const buttonStyle = {
     flex: 1,
     padding: '6px 2px',
@@ -114,7 +113,7 @@ export const TaskCard = ({ task, onUpdateTask, onUpdateStatus, onDelete }) => {
       boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
       overflow: 'hidden' // Garante que nenhum conteúdo passe da borda do card
     }}>
-      {/* ✏️ TÍTULO COM QUEBRA DE TEXTO OBRIGATÓRIA */}
+
       <h4 style={{ 
         margin: '0 0 6px 0', 
         fontSize: '15px', 
@@ -125,7 +124,6 @@ export const TaskCard = ({ task, onUpdateTask, onUpdateStatus, onDelete }) => {
         {task.title}
       </h4>
       
-      {/* ✏️ DESCRIÇÃO COM QUEBRA DE TEXTO OBRIGATÓRIA */}
       {task.description && (
         <p style={{ 
           fontSize: '13px', 
@@ -158,7 +156,6 @@ export const TaskCard = ({ task, onUpdateTask, onUpdateStatus, onDelete }) => {
         </div>
       )}
 
-      {/* Botões do Card */}
       <div style={{ 
         display: 'flex', 
         gap: '4px', 

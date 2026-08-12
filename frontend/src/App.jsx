@@ -34,7 +34,6 @@ export function App() {
     }
   };
 
-  // 🔄 Atualiza o status (mover coluna)
   const handleUpdateStatus = async (task, newStatus) => {
     try {
       const updatedPayload = { 
@@ -49,7 +48,6 @@ export function App() {
     }
   };
 
-  // ✏️ Atualiza as informações completas da tarefa (Título, Descrição, Datas)
   const handleUpdateTask = async (updatedTask) => {
     try {
       const updated = await updateTask(updatedTask.id, updatedTask);
@@ -123,7 +121,7 @@ export function App() {
         fontSize: '14px'
       }}>
         <p style={{ margin: 0 }}>
-          Desenvolvido por <strong>William Rodrigues</strong> • Todos os direitos reservados &copy; {new Date().getFullYear()}
+          Desenvolvido por <strong>William Rodrigues</strong> &copy; {new Date().getFullYear()}
         </p>
       </footer>
     </div>
