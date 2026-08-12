@@ -80,7 +80,7 @@ export const TaskCard = ({ task, onUpdateTask, onUpdateStatus, onDelete }) => {
         </div>
 
         <div style={{ display: 'flex', gap: '6px', justifyContent: 'flex-end' }}>
-          <button onClick={handleCancel} style={{ padding: '4px 10px', borderRadius: '4px', border: '1px solid #ccc', cursor: 'pointer', backgroundColor: '#e2e8f0' }}>
+          <button onClick={handleCancel} style={{ backgroundColor: '#f1f5f9', color: '#334155', border: '1px solid #cbd5e1', borderRadius: '4px' }}>
             Cancelar
           </button>
           <button onClick={handleSave} style={{ padding: '4px 10px', borderRadius: '4px', backgroundColor: '#10b981', color: '#fff', border: 'none', cursor: 'pointer' }}>
