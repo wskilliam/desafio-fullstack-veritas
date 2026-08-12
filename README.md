@@ -25,13 +25,47 @@ Os diagramas de arquitetura e fluxo da aplicação estão salvos na pasta `/docs
 
 ### 1. Executando o Backend
 ```bash
+# Entrar na pasta do backend
 cd backend
+
+# Iniciar o servidor HTTP
 go run .
 ```
 
 ### 2. Executando o Frontend
 ```bash
+# Entrar na pasta do frontend
 cd frontend
+
+# Instalar as dependências
 npm install
+
+# Iniciar o servidor de desenvolvimento
 npm run dev
 ```
+### 3. Estrutura do Repositório
+```
+text
+desafio-fullstack-veritas/
+├── backend/
+│   ├── main.go
+│   ├── handlers.go
+│   └── models.go
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   └── package.json
+├── docs/
+│   ├── user-flow.png
+│   └── data-flow.png
+└── README.md
+```
+### 4 - Decisões Técnicas
+
+- **Implementação dos cabeçalhos HTTP de CORS (Access-Control-Allow-Origin, Methods, Headers) no Go para permitir a comunicação com o React em ambiente de desenvolvimento.**
+
+- **Backend em Go Nativo (net/http):
+
+- **Optei por não utilizar frameworks externos (como Gin ou Fiber) para demonstrar domínio dos pacotes nativos da linguagem e manter a aplicação leve e simples.**
