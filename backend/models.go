@@ -3,7 +3,10 @@ package main
 import (
 	"errors"
 	"strings"
+	"time"
 )
+
+type TaskStatus string
 
 const (
 	StatusTodo       = "todo"
@@ -12,10 +15,13 @@ const (
 )
 
 type Task struct {
-	ID          string `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Status      string `json:"status"`
+	ID          string     `json:"id"`
+	Title       string     `json:"title"`
+	Description string     `json:"description,omitempty"`
+	Status      TaskStatus `json:"status"`
+	StartDate   string     `json:"startDate,omitempty"`
+	EndDate     string     `json:"endDate,omitempty"`
+	CreatedAt   time.Time  `json:"createdAt"`
 }
 
 func (t *Task) Validate() error {

@@ -34,12 +34,11 @@ export function App() {
     }
   };
 
+  // 🔄 Atualiza o status (mover coluna)
   const handleUpdateStatus = async (task, newStatus) => {
     try {
       const updatedPayload = { 
-        id: task.id,
-        title: task.title,
-        description: task.description || "",
+        ...task,
         status: newStatus, 
       };
 
@@ -47,6 +46,16 @@ export function App() {
       setTasks((prev) => prev.map((t) => (t.id === task.id ? updated : t)));
     } catch (err) {
       alert('Erro ao atualizar status da tarefa.');
+    }
+  };
+
+  // ✏️ Atualiza as informações completas da tarefa (Título, Descrição, Datas)
+  const handleUpdateTask = async (updatedTask) => {
+    try {
+      const updated = await updateTask(updatedTask.id, updatedTask);
+      setTasks((prev) => prev.map((t) => (t.id === updatedTask.id ? updated : t)));
+    } catch (err) {
+      alert('Erro ao editar a tarefa.');
     }
   };
 
@@ -71,7 +80,7 @@ export function App() {
       justifyContent: 'space-between'
     }}>
       <div>
-        <h2 style={{ marginBottom: '20px', color: '#64748b'}}>Mini Kanban de Tarefas</h2>
+        <h2>Mini Kanban de Tarefas</h2>
 
         <TaskForm onAddTask={handleAddTask} />
 
@@ -83,26 +92,30 @@ export function App() {
             <KanbanColumn
               title="A Fazer"
               tasks={tasks.filter((t) => t.status === 'todo')}
+              onUpdateTask={handleUpdateTask}
               onUpdateStatus={handleUpdateStatus}
               onDelete={handleDeleteTask}
             />
             <KanbanColumn
               title="Em Progresso"
               tasks={tasks.filter((t) => t.status === 'in_progress')}
+              onUpdateTask={handleUpdateTask}
               onUpdateStatus={handleUpdateStatus}
               onDelete={handleDeleteTask}
             />
             <KanbanColumn
               title="Concluídas"
               tasks={tasks.filter((t) => t.status === 'done')}
+              onUpdateTask={handleUpdateTask}
               onUpdateStatus={handleUpdateStatus}
               onDelete={handleDeleteTask}
             />
           </div>
         )}
       </div>
+
       <footer style={{ 
-        marginTop: '10px', 
+        marginTop: '40px', 
         paddingTop: '20px', 
         borderTop: '1px solid #e2e8f0', 
         textAlign: 'center', 
