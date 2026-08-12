@@ -60,36 +60,59 @@ export function App() {
   };
 
   return (
-    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '20px', fontFamily: 'sans-serif' }}>
-      <h2>📋 Mini Kanban de Tarefas</h2>
+    <div style={{ 
+      maxWidth: '1000px', 
+      margin: '0 auto', 
+      padding: '20px', 
+      fontFamily: 'sans-serif',
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between'
+    }}>
+      <div>
+        <h2 style={{ marginBottom: '20px', color: '#64748b'}}>Mini Kanban de Tarefas</h2>
 
-      <TaskForm onAddTask={handleAddTask} />
+        <TaskForm onAddTask={handleAddTask} />
 
-      {loading && <p>Carregando tarefas...</p>}
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+        {loading && <p>Carregando tarefas...</p>}
+        {error && <p style={{ color: 'red' }}>{error}</p>}
 
-      {!loading && !error && (
-        <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-          <KanbanColumn
-            title="A Fazer"
-            tasks={tasks.filter((t) => t.status === 'todo')}
-            onUpdateStatus={handleUpdateStatus}
-            onDelete={handleDeleteTask}
-          />
-          <KanbanColumn
-            title="Em Progresso"
-            tasks={tasks.filter((t) => t.status === 'in_progress')}
-            onUpdateStatus={handleUpdateStatus}
-            onDelete={handleDeleteTask}
-          />
-          <KanbanColumn
-            title="Concluídas"
-            tasks={tasks.filter((t) => t.status === 'done')}
-            onUpdateStatus={handleUpdateStatus}
-            onDelete={handleDeleteTask}
-          />
-        </div>
-      )}
+        {!loading && !error && (
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+            <KanbanColumn
+              title="A Fazer"
+              tasks={tasks.filter((t) => t.status === 'todo')}
+              onUpdateStatus={handleUpdateStatus}
+              onDelete={handleDeleteTask}
+            />
+            <KanbanColumn
+              title="Em Progresso"
+              tasks={tasks.filter((t) => t.status === 'in_progress')}
+              onUpdateStatus={handleUpdateStatus}
+              onDelete={handleDeleteTask}
+            />
+            <KanbanColumn
+              title="Concluídas"
+              tasks={tasks.filter((t) => t.status === 'done')}
+              onUpdateStatus={handleUpdateStatus}
+              onDelete={handleDeleteTask}
+            />
+          </div>
+        )}
+      </div>
+      <footer style={{ 
+        marginTop: '10px', 
+        paddingTop: '20px', 
+        borderTop: '1px solid #e2e8f0', 
+        textAlign: 'center', 
+        color: '#64748b',
+        fontSize: '14px'
+      }}>
+        <p style={{ margin: 0 }}>
+          Desenvolvido por <strong>William Rodrigues</strong> • Todos os direitos reservados &copy; {new Date().getFullYear()}
+        </p>
+      </footer>
     </div>
   );
 }

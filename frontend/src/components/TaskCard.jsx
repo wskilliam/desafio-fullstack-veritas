@@ -20,7 +20,7 @@ export const TaskCard = ({ task, onUpdateStatus, onDelete }) => {
         {}
         {task.status !== 'todo' && (
           <button onClick={() => onUpdateStatus(task, 'todo')}>
-            ← A Fazer
+            A Fazer
           </button>
         )}
         
@@ -32,14 +32,13 @@ export const TaskCard = ({ task, onUpdateStatus, onDelete }) => {
         
         {task.status !== 'done' && (
           <button onClick={() => onUpdateStatus(task, 'done')}>
-            Concluir →
+            Concluir
           </button>
         )}
         
         <button 
           onClick={() => onDelete(task.id)} 
-          style={{ backgroundColor: '#ff4d4f', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer' }}
-        >
+          style={{ backgroundColor: '#ff4d4f', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer' }}>
           Excluir
         </button>
       </div>          
