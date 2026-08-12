@@ -1,0 +1,18 @@
+# Frontend / Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+*.log
+
+# Backend / Go
+backend/backend (se houver executável)
+*.exe
+*.exe?
+*.dll
+*.so
+*.dylib
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
