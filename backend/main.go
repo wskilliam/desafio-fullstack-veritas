@@ -62,7 +62,7 @@ func main() {
 	http.HandleFunc("/tasks/", enableCors(taskHandler))
 
 	port := ":8080"
-	fmt.Printf("Servidor iniciado na porta %s\n", port)
+	fmt.Printf("Servidor iniciado na porta http://localhost%s\n", port)
 	if err := http.ListenAndServe(port, nil); err != nil {
 		log.Fatalf("Erro ao iniciar o servidor: %v", err)
 	}

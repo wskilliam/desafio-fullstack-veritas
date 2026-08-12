@@ -111,7 +111,7 @@ export const TaskCard = ({ task, onUpdateTask, onUpdateStatus, onDelete }) => {
       marginBottom: '10px',
       backgroundColor: '#fff',
       boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-      overflow: 'hidden' // Garante que nenhum conteúdo passe da borda do card
+      overflow: 'hidden'
     }}>
 
       <h4 style={{ 

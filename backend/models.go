@@ -3,7 +3,6 @@ package main
 import (
 	"errors"
 	"strings"
-	"time"
 )
 
 type TaskStatus string
@@ -21,7 +20,6 @@ type Task struct {
 	Status      TaskStatus `json:"status"`
 	StartDate   string     `json:"startDate,omitempty"`
 	EndDate     string     `json:"endDate,omitempty"`
-	CreatedAt   time.Time  `json:"createdAt"`
 }
 
 func (t *Task) Validate() error {
