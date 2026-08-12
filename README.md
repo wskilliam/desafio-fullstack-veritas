@@ -66,6 +66,4 @@ desafio-fullstack-veritas/
 
 - **Implementação dos cabeçalhos HTTP de CORS (Access-Control-Allow-Origin, Methods, Headers) no Go para permitir a comunicação com o React em ambiente de desenvolvimento.**
 
-- **Backend em Go Nativo (net/http):
-
 - **Optei por não utilizar frameworks externos (como Gin ou Fiber) para demonstrar domínio dos pacotes nativos da linguagem e manter a aplicação leve e simples.**
